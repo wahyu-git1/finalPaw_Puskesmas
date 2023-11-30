@@ -34,7 +34,7 @@
               </ul>
             </li>
             <li class="navbar-nav">
-                <a class="nav-link" href="">Transaksi</a>
+                <a class="nav-link" href="../transaksi/berandaTransaksi.php">Transaksi</a>
             </li>
             <li class="navbar-nav">
                 <a class="nav-link" href="../laporan/berandaLaporan.php">Laporan</a>

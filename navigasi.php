@@ -34,10 +34,10 @@
               </ul>
             </li>
             <li class="navbar-nav">
-                <a class="nav-link" href="indexDetail.php">Transaksi</a>
+                <a class="nav-link" href="transaksi/berantaTransaksi.php">Transaksi</a>
             </li>
             <li class="navbar-nav">
-                <a class="nav-link" href="indexDetail.php">Laporan</a>
+                <a class="nav-link" href="laporan/berandaLaporan.php">Laporan</a>
             </li>
           </ul>
         </div>

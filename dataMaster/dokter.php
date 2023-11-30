@@ -10,6 +10,7 @@ $hasil = mysqli_query($koneksi, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
     <title>Data Dokter</title>
 </head>
 <body>
@@ -18,11 +19,13 @@ $hasil = mysqli_query($koneksi, $query);
         <h1>Data Dokter</h1>
         <hr>
         <br>
-        <a href="create.php"><button class="btn btn-update">Tambah</button></a>
+        <a href="create.php"><button class="btn btn-primary">Tambah</button></a>
         <br>
         <br>
-        
-        <table>
+
+        <center>
+        <div class="table" >
+        <table class="table table-bordered" >
             <tr>
                 <th>No</th>
                 <th>Kode Dokter</th>
@@ -44,12 +47,14 @@ $hasil = mysqli_query($koneksi, $query);
                 <td><?= $row['alamat'] ?></td>
                 <td><?= $row['no_telp'] ?></td>
                 <td>
-                    <a href="update.php?id=<?= $row['id_dokter']; ?>"><button class="btn btn-edit">Edit</button></a>
-                    <a href="javascript:void(id=<?=$row['id_dokter'];?>);" onclick="hapus(<?= $row['id_dokter']; ?>)"><button class="btn btn-delete">Hapus</button></a>
+                    <a href="update.php?id=<?= $row['id_dokter']; ?>"><button class="btn btn-outline-warning">Edit</button></a>
+                    <a href="javascript:void(id=<?=$row['id_dokter'];?>);" onclick="hapus(<?= $row['id_dokter']; ?>)"><button class="btn btn-outline-danger">Hapus</button></a>
                 </td>
             </tr>
             <?php $rowNum++ ; } ?>
         </table>
+        </div>
+        </center>
     </div>
 
     <script>
