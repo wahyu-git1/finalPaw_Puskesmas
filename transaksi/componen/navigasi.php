@@ -23,18 +23,18 @@
         <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <button class="btn btn-dark dropdown-toggle show" data-bs-toggle="dropdown" aria-expanded="true">
-                Dropdown
+              <button class="btn btn-dark dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="true">
+                Data Master
               </button>
-              <ul class="dropdown-menu dropdown-menu-dark show" data-bs-popper="static">
-                <li><a class="dropdown-item" href="../dataMaster/dokter.php">Data Dokter</a></li>
-                <li><a class="dropdown-item" href="../dataMaster/obat.php">Data Obat</a></li>
-                <li><a class="dropdown-item" href="../dataMaster/pasien.php">Data Pasien</a></li>
-                <li><a class="dropdown-item" href="../dataMaster/poli.php">Data Poli</a></li>
+              <ul class="dropdown-menu dropdown-menu-dark " data-bs-popper="static">
+                <li><a class="dropdown-item" href="../dataMaster/dokter/dokter.php">Data Dokter</a></li>
+                <li><a class="dropdown-item" href="../dataMaster/obat/obat.php">Data Obat</a></li>
+                <li><a class="dropdown-item" href="../dataMaster/pasien/pasien.php">Data Pasien</a></li>
+                <li><a class="dropdown-item" href="../dataMaster/poli/poli.php">Data Poli</a></li>
               </ul>
             </li>
             <li class="navbar-nav">
-                <a class="nav-link" href="berandaTransaksi.php">Transaksi</a>
+                <a class="nav-link" href="../transaksi/berandaTransaksi.php">Rekam Medis</a>
             </li>
             <li class="navbar-nav">
                 <a class="nav-link" href="../laporan/berandaLaporan.php">Laporan</a>

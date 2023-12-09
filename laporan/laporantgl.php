@@ -20,9 +20,15 @@ if (isset($_GET['submit'])) {
 
 
 ?>
+
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.css">
+
+
+    </head>
 <body>
-
-
+<?php include "berandaLaporan.php";?>
    <br>
         <!-- Rentan waktu -->
         <form action="" method="get" class="row g-3" >
@@ -46,8 +52,10 @@ if (isset($_GET['submit'])) {
   
 
 
-   <table border="1" align="center" class="table table-success table-striped-columns">
-       <tr>
+        <center>
+        <div class="table">
+        <table class="table table-bordered" >
+        <tr>
            <th>No</th>
            <th>Nama Pasien</th>
            <th>keluhan</th>
@@ -79,8 +87,8 @@ if (isset($_GET['submit'])) {
             ;?>
     
    </table>
-
-         
+</div>
+</center>         
 
 </body>
 </html>

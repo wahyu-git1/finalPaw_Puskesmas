@@ -12,13 +12,13 @@ $hasil = mysqli_query($koneksi, $query);
     <title>Data Obat</title>
 </head>
 <body>
-<?php include "componen/navigasi.php";?>
+<?php include "../componen/navigasi.php";?>
 
     <div class="">
         <h1>Data Obat</h1>
         <hr>
         <br>
-        <a href="create.php"><button class="btn btn-update">Tambah</button></a>
+        <a href="tambah.php"><button>Tambah</button></a>
         <br>
         <br>
         
@@ -40,8 +40,8 @@ $hasil = mysqli_query($koneksi, $query);
                 <td><?= $row['nama_obat'] ?></td>
                 <td><?= $row['keterangan'] ?></td>
                 <td>
-                    <a href="update.php?id=<?= $row['id_obat']; ?>"><button class="btn btn-edit">Edit</button></a>
-                    <a href="javascript:void(id=<?=$row['id_obat'];?>);" onclick="hapus(<?= $row['id_obat']; ?>)"><button class="btn btn-delete">Hapus</button></a>
+                    <a href="edit.php?id=<?= $row['id_obat']; ?>"><button>Edit</button></a>
+                    <a href="javascript:void(id=<?=$row['id_obat'];?>);" onclick="confirmDelete('<?= $row['id_obat']; ?>')"><button>Hapus</button></a>
                 </td>
             </tr>
             <?php $rowNum++ ; } ?>
@@ -49,9 +49,10 @@ $hasil = mysqli_query($koneksi, $query);
     </div>
 
     <script>
-        function hapus(id) {
-            if (confirm("Anda yakin akan menghapus supplier ini?")) {
-                window.location = "hapus.php?id=" + id;
+        function confirmDelete(id) {
+            var result = confirm("Apakah Anda yakin ingin menghapus data?");
+            if (result) {
+                window.location.href = "hapus.php?id=" + id;
             }
         }
     </script>

@@ -20,7 +20,12 @@ if (isset($_GET['submitPoli'])){
 
     
 ?>
+<html>
+    <head>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.css">
+    </head>
 <body>
+<?php include "berandaLaporan.php";?>
 
 <form action="" method="get">
 <br>
@@ -52,11 +57,12 @@ Nama poli :
         <a class="" href="berandaLaporan.php"><button class="btn btn-success" >Kembali</button></a>
   
 <center>   Data laporan poli</center>
-<center> <?php echo strtoupper($rowNama['nama_poli']) ;?></center>
+<center> <?= (isset($rowNama['nama_poli'])) ? strtoupper($rowNama['nama_poli']) : " ";?></center>
 <br>
 <br>
-   <table border="1" align="center" class="table table-success table-striped-columns">
-       <tr>
+        <center>
+        <div class="table">
+        <table class="table table-bordered" >       <tr>
            <th>No</th>
            <th>Nama Pasien</th>
            <th>keluhan</th>
@@ -88,6 +94,7 @@ Nama poli :
                 };?>
     
    </table>
-
+   </div>
+</center>
 </body>
 </html>

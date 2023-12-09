@@ -10,21 +10,21 @@ $hasil = mysqli_query($koneksi, $query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.css">
     <title>Data Dokter</title>
 </head>
 <body>
-<?php include "componen/navigasi.php";?>
+<?php include "../componen/navigasi.php";?>
     <div class="">
         <h1>Data Dokter</h1>
         <hr>
         <br>
-        <a href="create.php"><button class="btn btn-primary">Tambah</button></a>
+        <a href="tambah.php"><button>Tambah</button></a>
         <br>
         <br>
-
+        
         <center>
-        <div class="table" >
+        <div class="table">
         <table class="table table-bordered" >
             <tr>
                 <th>No</th>
@@ -47,8 +47,8 @@ $hasil = mysqli_query($koneksi, $query);
                 <td><?= $row['alamat'] ?></td>
                 <td><?= $row['no_telp'] ?></td>
                 <td>
-                    <a href="update.php?id=<?= $row['id_dokter']; ?>"><button class="btn btn-outline-warning">Edit</button></a>
-                    <a href="javascript:void(id=<?=$row['id_dokter'];?>);" onclick="hapus(<?= $row['id_dokter']; ?>)"><button class="btn btn-outline-danger">Hapus</button></a>
+                    <a href="edit.php?id=<?= $row['id_dokter']; ?>"><button>Edit</button></a>
+                    <a href="javascript:void(id=<?=$row['id_dokter'];?>);" onclick="confirmDelete('<?= $row['id_dokter']; ?>')"><button>Hapus</button></a>
                 </td>
             </tr>
             <?php $rowNum++ ; } ?>
@@ -58,9 +58,10 @@ $hasil = mysqli_query($koneksi, $query);
     </div>
 
     <script>
-        function hapus(id) {
-            if (confirm("Anda yakin akan menghapus supplier ini?")) {
-                window.location = "hapus.php?id=" + id;
+        function confirmDelete(id) {
+            var result = confirm("Apakah Anda yakin ingin menghapus data?");
+            if (result) {
+                window.location.href = "hapus.php?id=" + id;
             }
         }
     </script>

@@ -2,13 +2,14 @@
 require "koneksi.php";
 
 if (isset($_POST['submit'])){
+    $id_rm = $_POST['id_rm'];
     $id_pasien=$_POST['id_pasien'];
     $keluhan=$_POST['keluhan'];
     $id_dokter=$_POST['id_dokter'];
     $diagnosa=$_POST['diagnosa'];
     $id_poli=$_POST['id_poli'];
     $waktu=$_POST['waktu'];
- $sql="INSERT INTO rekammedis VALUES (Null,'$id_pasien','$keluhan','$id_dokter','$diagnosa','$id_poli','$waktu')";
+ $sql="INSERT INTO rekammedis VALUES ('$id_rm', '$id_pasien','$keluhan','$id_dokter','$diagnosa','$id_poli','$waktu')";
 
  $hasil=mysqli_query($koneksi,$sql);
  if ($hasil){
@@ -82,9 +83,15 @@ if (isset($_POST['submit'])){
 <body>
 <h1 class="centered">Tambah Data RekamMedis</h1>
     <form action="" method="POST">
+
+    <label for="id_rm">Id Rekammedis :</label>
+    <input type="text" id="id_rm" name="id_rm">
+    <br>
+    <br>
         
     <label for="pasien">Id Pasien   :</label>
     <select name="id_pasien" id="pasien">
+    <option disabled selected>Pilih Nama Pasien</option>
     <?php
     $querypasien = "SELECT id_pasien, nama_pasien FROM pasien";
     $resultpasien = mysqli_query($koneksi, $querypasien);
@@ -106,6 +113,7 @@ if (isset($_POST['submit'])){
 
     <label for="dokter">Id dokter   :</label>
     <select name="id_dokter" id="dokter">
+    <option disabled selected>Pilih Nama Dokter</option>
     <?php
     $querydokter = "SELECT id_dokter, nama_dokter FROM dokter";
     $resultdokter = mysqli_query($koneksi, $querydokter);
@@ -126,6 +134,7 @@ if (isset($_POST['submit'])){
 
     <label for="poli">Id poli   :</label>
     <select name="id_poli" id="poli">
+    <option disabled selected>Pilih Jenis Poliklinik</option>
     <?php
     $querypoli = "SELECT id_poli, nama_poli FROM poliklinik";
     $resultpoli = mysqli_query($koneksi, $querypoli);
